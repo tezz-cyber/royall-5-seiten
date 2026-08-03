@@ -1,0 +1,22 @@
+---
+import ServiceTile from "./ServiceTile.astro";
+export interface Props {
+  title: string;
+  overviewHref: string;
+  items: { title: string; href: string }[];
+}
+const { title, overviewHref, items } = Astro.props;
+---
+<section class="py-12 md:py-16 border-b border-gray-100 last:border-0">
+  <div class="max-w-6xl mx-auto px-4 md:px-6">
+    <div class="flex items-center justify-between mb-6 md:mb-8">
+      <h2 class="text-xl md:text-2xl font-bold">{title}</h2>
+      <a href={overviewHref} class="text-royall-gold text-sm font-semibold hover:underline whitespace-nowrap">
+        Alle ansehen →
+      </a>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+      {items.map((s) => <ServiceTile title={s.title} href={s.href} />)}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,94 @@
+---
+---
+<section id="kontakt-formular" class="max-w-6xl mx-auto px-4 py-12">
+  <div class="bg-royall-dark rounded-3xl overflow-hidden grid md:grid-cols-2 gap-0 shadow-xl">
+    <div class="p-10 md:p-14 text-white flex flex-col justify-between relative">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-bold leading-tight mb-6">
+          Sie suchen Unterstützung?<br/>Wir helfen Ihnen!
+        </h2>
+        <p class="text-lg font-semibold mb-1">
+          <a href="tel:+4923400000000" class="hover:text-royall-gold">0234 00 00 00</a>
+        </p>
+        <p class="text-lg font-semibold mb-8">
+          <a href="mailto:info@royall-example.de" class="hover:text-royall-gold">info@royall-example.de</a>
+        </p>
+
+        <div class="grid grid-cols-2 gap-6 text-sm">
+          <div>
+            <h3 class="font-semibold text-royall-gold mb-2">Adresse</h3>
+            <p>Royall Service & Security<br/>Dienstleistung GmbH</p>
+            <p class="mt-2">[Straße Hausnummer]<br/>[PLZ] Bochum</p>
+          </div>
+          <div>
+            <h3 class="font-semibold text-royall-gold mb-2">Büro Öffnungszeiten</h3>
+            <p>Mo–Do: 8:00 bis 16:30 Uhr</p>
+            <p>Fr: 8:00 bis 14:00 Uhr</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hidden md:block mt-10 h-56 bg-white/5 rounded-xl flex items-center justify-center text-gray-400 text-sm">
+        Platzhalter: Mitarbeiter-Foto
+      </div>
+    </div>
+
+    <div class="bg-royall-dark p-10 md:p-14">
+      <form id="contact-form" class="flex flex-col gap-4">
+        <input type="text" name="unternehmen" placeholder="Unternehmen"
+          class="rounded-lg px-5 py-4 bg-white placeholder-gray-400 text-royall-dark focus:outline-none focus:ring-2 focus:ring-royall-gold" />
+        <input type="text" name="name" placeholder="Vorname & Nachname*" required
+          class="rounded-lg px-5 py-4 bg-white placeholder-gray-400 text-royall-dark focus:outline-none focus:ring-2 focus:ring-royall-gold" />
+        <input type="email" name="email" placeholder="E-Mail-Adresse*" required
+          class="rounded-lg px-5 py-4 bg-white placeholder-gray-400 text-royall-dark focus:outline-none focus:ring-2 focus:ring-royall-gold" />
+        <input type="tel" name="telefon" placeholder="Telefon*" required
+          class="rounded-lg px-5 py-4 bg-white placeholder-gray-400 text-royall-dark focus:outline-none focus:ring-2 focus:ring-royall-gold" />
+        <textarea name="nachricht" placeholder="Ihre Nachricht" rows="5"
+          class="rounded-lg px-5 py-4 bg-white placeholder-gray-400 text-royall-dark focus:outline-none focus:ring-2 focus:ring-royall-gold"></textarea>
+
+        <label class="flex items-center gap-3 text-white text-sm mt-2 cursor-pointer select-none">
+          <span class="relative inline-block w-11 h-6">
+            <input type="checkbox" name="rueckruf" class="peer sr-only" />
+            <span class="absolute inset-0 bg-white/20 rounded-full peer-checked:bg-royall-gold transition-colors"></span>
+            <span class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition-transform peer-checked:translate-x-5"></span>
+          </span>
+          Ich bitte um Rückruf
+        </label>
+
+        <label class="flex items-start gap-3 text-white text-sm">
+          <input type="checkbox" name="datenschutz" required class="mt-1 accent-royall-gold" />
+          <span>Ich habe die <a href="/datenschutz" class="underline hover:text-royall-gold">Datenschutzerklärung</a> gelesen und stimme dieser zu.*</span>
+        </label>
+
+        <button type="submit"
+          class="self-start bg-royall-gold text-royall-dark font-semibold px-8 py-3 rounded-lg hover:opacity-90 transition mt-2">
+          Senden
+        </button>
+
+        <p id="form-status" class="text-sm text-royall-gold hidden"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById("contact-form");
+  const status = document.getElementById("form-status");
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const fd = new FormData(form);
+    status.classList.remove("hidden");
+    status.textContent = "Wird gesendet...";
+    try {
+      const res = await fetch("/api/kontakt", { method: "POST", body: fd });
+      if (res.ok) {
+        status.textContent = "Danke! Ihre Nachricht wurde gesendet.";
+        form.reset();
+      } else {
+        status.textContent = "Es gab ein Problem beim Senden. Bitte versuchen Sie es erneut.";
+      }
+    } catch {
+      status.textContent = "Es gab ein Problem beim Senden. Bitte versuchen Sie es erneut.";
+    }
+  });
+</script>

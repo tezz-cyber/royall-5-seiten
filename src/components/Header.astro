@@ -1,0 +1,87 @@
+---
+const gebaudereinigung = [
+  { href: "/gebaudereinigung/unterhaltsreinigung", label: "Unterhaltsreinigung" },
+  { href: "/gebaudereinigung/glasreinigung", label: "Glasreinigung" },
+  { href: "/gebaudereinigung/grundreinigung", label: "Grundreinigung" },
+  { href: "/gebaudereinigung/bauendreinigung", label: "Bauendreinigung" },
+];
+const gebaudeservice = [
+  { href: "/gebaudeservice/hausmeisterservice", label: "Hausmeisterservice" },
+  { href: "/gebaudeservice/schaedlingsbekaempfung", label: "Schädlingsbekämpfung" },
+  { href: "/gebaudeservice/gruenflaechenpflege", label: "Grünflächenpflege" },
+  { href: "/gebaudeservice/teppichreinigung", label: "Teppichreinigung" },
+];
+const menus = [
+  { label: "Gebäudereinigung", overview: "/gebaudereinigung", items: gebaudereinigung },
+  { label: "Gebäudeservice", overview: "/gebaudeservice", items: gebaudeservice },
+];
+const main = [
+  { href: "/ueber-uns", label: "Unternehmen" },
+  { href: "/jobs", label: "Jobs" },
+  { href: "/kontakt", label: "Kontakt" },
+];
+---
+<header class="sticky top-0 z-50 bg-royall-dark text-white shadow-md">
+  <div class="max-w-6xl mx-auto flex items-center justify-between px-4 md:px-6 py-3 gap-4">
+    <a href="/" class="flex items-center gap-2 shrink-0">
+      <span class="w-9 h-9 rounded-md bg-royall-gold text-royall-dark font-bold flex items-center justify-center text-sm">R</span>
+      <span class="text-lg font-bold tracking-wide whitespace-nowrap">ROYALL</span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-5 text-sm font-medium">
+      {menus.map((m) => (
+        <div class="relative group">
+          <a href={m.overview} class="hover:text-royall-gold transition-colors flex items-center gap-1 whitespace-nowrap">
+            {m.label}
+            <svg class="w-3 h-3" viewBox="0 0 20 20" fill="currentColor"><path d="M5 7l5 5 5-5H5z"/></svg>
+          </a>
+          <div class="absolute left-0 top-full pt-3 hidden group-hover:block">
+            <div class="bg-white text-royall-dark rounded-md shadow-lg py-2 w-60">
+              {m.items.map((s) => (
+                <a href={s.href} class="block px-4 py-2 hover:bg-royall-light text-sm">{s.label}</a>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+      {main.map((l) => (
+        <a href={l.href} class="hover:text-royall-gold transition-colors whitespace-nowrap">{l.label}</a>
+      ))}
+    </nav>
+    <button id="menu-toggle" class="lg:hidden text-white" aria-label="Menü öffnen" aria-expanded="false">
+      <svg id="icon-open" class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      <svg id="icon-close" class="w-7 h-7 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+
+  <div id="mobile-menu" class="hidden lg:hidden bg-royall-dark border-t border-white/10 max-h-[80vh] overflow-y-auto">
+    <div class="px-4 py-4 flex flex-col gap-2 text-sm">
+      {menus.map((m) => (
+        <details class="border-b border-white/10 pb-2">
+          <summary class="py-2 cursor-pointer font-medium">{m.label}</summary>
+          <div class="pl-4 flex flex-col gap-1 pb-2">
+            {m.items.map((s) => (
+              <a href={s.href} class="py-1 text-gray-300 hover:text-royall-gold">{s.label}</a>
+            ))}
+          </div>
+        </details>
+      ))}
+      {main.map((l) => (
+        <a href={l.href} class="py-2 border-b border-white/10 hover:text-royall-gold">{l.label}</a>
+      ))}
+    </div>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById("menu-toggle");
+  const menu = document.getElementById("mobile-menu");
+  const iconOpen = document.getElementById("icon-open");
+  const iconClose = document.getElementById("icon-close");
+  toggle?.addEventListener("click", () => {
+    const isOpen = !menu.classList.contains("hidden");
+    menu.classList.toggle("hidden");
+    iconOpen.classList.toggle("hidden");
+    iconClose.classList.toggle("hidden");
+    toggle.setAttribute("aria-expanded", String(!isOpen));
+  });
+</script>

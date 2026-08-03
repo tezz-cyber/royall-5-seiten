@@ -1,0 +1,25 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import ServiceDetailLayout from "../../components/ServiceDetailLayout.astro";
+
+const kicker = "Gepflegte Außenanlagen das ganze Jahr";
+const title = "Grünflächenpflege";
+const intro = [
+    "Ein gepflegtes Außengelände hinterlässt einen bleibenden ersten Eindruck. Unsere Grünflächenpflege sorgt ganzjährig für ordentliche Rasenflächen, Hecken und Beete rund um Ihre Immobilie.",
+    "Von der regelmäßigen Rasenpflege bis zum saisonalen Rückschnitt übernehmen wir alle Arbeiten zuverlässig nach individuell vereinbarten Intervallen."
+  ];
+const features = [
+    { title: "Rasenmahd und Rasenpflege", desc: "Regelmäßige Pflege für ein gepflegtes Erscheinungsbild." },
+    { title: "Hecken- und Strauchschnitt", desc: "Fachgerechter Rückschnitt zur richtigen Jahreszeit." },
+    { title: "Beetpflege und Unkrautentfernung", desc: "Ordentliche Beete ohne unerwünschten Bewuchs." },
+    { title: "Saisonale Außenpflege", desc: "Laubentfernung im Herbst und Frühjahrspflege inklusive." }
+  ];
+const badge = undefined;
+---
+<Layout title="Grünflächenpflege | Royall Service & Security">
+  <Header />
+  <ServiceDetailLayout kicker={kicker} title={title} intro={intro} features={features} badge={badge} />
+  <Footer />
+</Layout>

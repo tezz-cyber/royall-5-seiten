@@ -1,0 +1,13 @@
+---
+export interface Props { title: string; href: string; }
+const { title, href } = Astro.props;
+---
+<a href={href} class="block rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg transition group">
+  <div class="h-36 md:h-40 bg-royall-light flex items-center justify-center text-gray-400 text-sm">
+    Platzhalter-Bild
+  </div>
+  <div class="bg-royall-dark text-white px-4 py-3 flex items-center justify-between">
+    <span class="font-medium text-sm">{title}</span>
+    <span class="text-royall-gold group-hover:translate-x-1 transition-transform">→</span>
+  </div>
+</a>

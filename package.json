@@ -1,0 +1,18 @@
+{
+  "name": "royall-website",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^4.16.0",
+    "@astrojs/tailwind": "^5.1.5",
+    "@astrojs/node": "^8.3.4",
+    "tailwindcss": "^3.4.10",
+    "nodemailer": "^6.9.15"
+  }
+}

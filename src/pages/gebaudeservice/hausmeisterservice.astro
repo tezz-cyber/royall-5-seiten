@@ -1,0 +1,25 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import ServiceDetailLayout from "../../components/ServiceDetailLayout.astro";
+
+const kicker = "Ihr zuverlässiger Partner rund um die Immobilie";
+const title = "Hausmeisterservice";
+const intro = [
+    "Eine Immobilie benötigt mehr als nur Reinigung. Unser Hausmeisterservice übernimmt die technische und organisatorische Betreuung Ihres Objekts, damit Sie sich um Ihr Kerngeschäft kümmern können.",
+    "Von kleinen Reparaturen bis zur regelmäßigen Kontrolle der Haustechnik: Wir sind Ihr fester Ansprechpartner vor Ort und reagieren schnell auf Anliegen."
+  ];
+const features = [
+    { title: "Technische Kontrolle und kleine Reparaturen", desc: "Regelmäßige Inspektion und schnelle Instandsetzung." },
+    { title: "Fester Ansprechpartner vor Ort", desc: "Persönliche Betreuung statt wechselnder Kontakte." },
+    { title: "Koordination von Fremdfirmen", desc: "Wir organisieren und überwachen externe Dienstleister." },
+    { title: "Notfallbereitschaft", desc: "Schnelle Reaktion bei unerwarteten Vorfällen im Objekt." }
+  ];
+const badge = undefined;
+---
+<Layout title="Hausmeisterservice | Royall Service & Security">
+  <Header />
+  <ServiceDetailLayout kicker={kicker} title={title} intro={intro} features={features} badge={badge} />
+  <Footer />
+</Layout>

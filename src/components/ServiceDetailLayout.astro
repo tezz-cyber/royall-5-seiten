@@ -1,0 +1,43 @@
+---
+export interface Feature { title: string; desc: string; }
+export interface Props {
+  kicker: string;
+  title: string;
+  intro: string[];
+  features: Feature[];
+  badge?: string;
+}
+const { kicker, title, intro, features, badge } = Astro.props;
+---
+<section class="max-w-5xl mx-auto px-4 md:px-6 py-14 md:py-20">
+  {badge && (
+    <span class="inline-block bg-royall-gold text-royall-dark text-xs font-semibold px-3 py-1 rounded-full mb-4">{badge}</span>
+  )}
+  <p class="text-royall-gold font-semibold mb-2">{kicker}</p>
+  <h1 class="text-2xl md:text-4xl font-bold mb-8">{title}</h1>
+
+  <div class="grid md:grid-cols-2 gap-8 items-start mb-12">
+    <div class="h-56 md:h-72 bg-royall-light rounded-xl flex items-center justify-center text-gray-400 text-sm order-1 md:order-2">
+      Platzhalter-Bild: {title}
+    </div>
+    <div class="order-2 md:order-1 flex flex-col gap-4">
+      {intro.map((p) => (
+        <p class="text-gray-700 leading-relaxed">{p}</p>
+      ))}
+    </div>
+  </div>
+
+  <h2 class="text-xl md:text-2xl font-bold mb-6">Unsere Leistungen im Bereich {title}:</h2>
+  <div class="grid sm:grid-cols-2 gap-6 mb-10">
+    {features.map((f) => (
+      <div class="bg-royall-light rounded-xl p-5">
+        <h3 class="font-semibold mb-2">{f.title}</h3>
+        <p class="text-sm text-gray-600">{f.desc}</p>
+      </div>
+    ))}
+  </div>
+
+  <a href="/kontakt" class="inline-block bg-royall-gold text-royall-dark font-semibold px-6 py-3 rounded-md hover:opacity-90 transition">
+    Angebot anfordern
+  </a>
+</section>

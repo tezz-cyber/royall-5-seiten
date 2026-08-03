@@ -1,0 +1,25 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import ServiceDetailLayout from "../../components/ServiceDetailLayout.astro";
+
+const kicker = "Klare Sicht für Ihr Unternehmen";
+const title = "Glasreinigung";
+const intro = [
+    "Verschmutzte Fenster und Glasflächen trüben nicht nur den Ausblick, sondern auch den ersten Eindruck Ihres Unternehmens. Mit unserer professionellen Glasreinigung sorgen wir für streifenfreien Glanz an Fenstern, Fassaden, Türen und Vitrinen.",
+    "Wir arbeiten mit modernem Equipment und geschultem Personal, auch für schwer zugängliche Fassadenbereiche und höhere Stockwerke, damit Ihre Räume optimal ausgeleuchtet und einladend wirken."
+  ];
+const features = [
+    { title: "Streifenfreie Fenster- und Fassadenreinigung", desc: "Für private und gewerbliche Objekte, innen und außen." },
+    { title: "Reinigung schwer zugänglicher Flächen", desc: "Auch mehrgeschossige Gebäude mit passender Ausrüstung." },
+    { title: "Individuelle Reinigungsintervalle", desc: "Von einmalig bis regelmäßig, ganz nach Ihrem Bedarf." },
+    { title: "Schonende Reinigungsmittel", desc: "Materialgerechte Pflege für Glas, Rahmen und Dichtungen." }
+  ];
+const badge = undefined;
+---
+<Layout title="Glasreinigung | Royall Service & Security">
+  <Header />
+  <ServiceDetailLayout kicker={kicker} title={title} intro={intro} features={features} badge={badge} />
+  <Footer />
+</Layout>

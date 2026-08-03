@@ -1,0 +1,74 @@
+---
+const year = new Date().getFullYear();
+const gebaudereinigung = [
+  { href: "/gebaudereinigung/unterhaltsreinigung", label: "Unterhaltsreinigung" },
+  { href: "/gebaudereinigung/glasreinigung", label: "Glasreinigung" },
+  { href: "/gebaudereinigung/grundreinigung", label: "Grundreinigung" },
+  { href: "/gebaudereinigung/bauendreinigung", label: "Bauendreinigung" },
+];
+const gebaudeservice = [
+  { href: "/gebaudeservice/hausmeisterservice", label: "Hausmeisterservice" },
+  { href: "/gebaudeservice/schaedlingsbekaempfung", label: "Schädlingsbekämpfung" },
+  { href: "/gebaudeservice/gruenflaechenpflege", label: "Grünflächenpflege" },
+  { href: "/gebaudeservice/teppichreinigung", label: "Teppichreinigung" },
+];
+const company = [
+  { href: "/ueber-uns", label: "Unternehmen" },
+  { href: "/jobs", label: "Jobs" },
+  { href: "/kontakt", label: "Kontakt" },
+];
+---
+<footer class="bg-royall-dark text-gray-300 pt-16 pb-8">
+  <div class="max-w-5xl mx-auto px-4 md:px-6 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10 text-sm">
+    <div class="col-span-2">
+      <h3 class="text-white font-semibold mb-4">Adresse</h3>
+      <p class="mb-1">Royall Service & Security<br/>Dienstleistung GmbH</p>
+      <p class="mb-1">[Straße Hausnummer]</p>
+      <p>[PLZ] Bochum</p>
+
+      <h3 class="text-white font-semibold mt-6 mb-4">Kontakt</h3>
+      <p class="mb-1">
+        <a href="mailto:info@royall-example.de" class="hover:text-royall-gold">info@royall-example.de</a>
+      </p>
+      <p>
+        <a href="tel:+4923400000000" class="hover:text-royall-gold">0234 00 00 00</a>
+      </p>
+    </div>
+
+    <div>
+      <h3 class="text-white font-semibold mb-4">Gebäudereinigung</h3>
+      <ul class="space-y-2">
+        {gebaudereinigung.map((l) => (<li><a href={l.href} class="hover:text-royall-gold">{l.label}</a></li>))}
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-white font-semibold mb-4">Gebäudeservice</h3>
+      <ul class="space-y-2">
+        {gebaudeservice.map((l) => (<li><a href={l.href} class="hover:text-royall-gold">{l.label}</a></li>))}
+      </ul>
+    </div>
+  </div>
+
+  <div class="max-w-5xl mx-auto px-4 md:px-6 mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10 text-sm">
+    <div class="col-span-2">
+      <h3 class="text-white font-semibold mb-4">Büro Öffnungszeiten</h3>
+      <p>Mo–Do: 8:00 bis 16:30 Uhr</p>
+      <p>Fr: 8:00 bis 14:00 Uhr</p>
+    </div>
+    <div>
+      <h3 class="text-white font-semibold mb-4">Royall</h3>
+      <ul class="space-y-2">
+        {company.map((l) => (<li><a href={l.href} class="hover:text-royall-gold">{l.label}</a></li>))}
+      </ul>
+    </div>
+  </div>
+
+  <div class="max-w-5xl mx-auto px-4 md:px-6 mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between gap-4 text-xs text-gray-400">
+    <p>© {year} Royall Service & Security Dienstleistung GmbH</p>
+    <div class="flex gap-6">
+      <a href="/impressum" class="hover:text-white">Impressum</a>
+      <a href="/datenschutz" class="hover:text-white">Datenschutz</a>
+    </div>
+  </div>
+</footer>

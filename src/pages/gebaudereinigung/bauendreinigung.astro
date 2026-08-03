@@ -1,0 +1,25 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import ServiceDetailLayout from "../../components/ServiceDetailLayout.astro";
+
+const kicker = "Bezugsfertig nach Bau- und Renovierungsarbeiten";
+const title = "Bauendreinigung";
+const intro = [
+    "Nach Bau- oder Renovierungsarbeiten bleiben oft Staub, Farbreste und Verschmutzungen zurück. Unsere Bauendreinigung sorgt dafür, dass Ihre Räume schnell und gründlich bezugsfertig übergeben werden können.",
+    "Wir entfernen Bauschutt-Reste, reinigen Böden, Fenster und Oberflächen und übergeben Ihnen ein sauberes, einzugsbereites Objekt, termingerecht abgestimmt mit Ihrem Bauzeitplan."
+  ];
+const features = [
+    { title: "Entfernung von Bau- und Montagerückständen", desc: "Staub, Kleberreste, Farbspritzer und mehr." },
+    { title: "Fenster- und Glasreinigung nach dem Bau", desc: "Streifenfreie Übergabe direkt nach Fertigstellung." },
+    { title: "Boden- und Oberflächenreinigung", desc: "Fachgerecht abgestimmt auf den jeweiligen Belag." },
+    { title: "Termingerechte Übergabe", desc: "Enge Abstimmung mit Bauleitung und Fertigstellungstermin." }
+  ];
+const badge = undefined;
+---
+<Layout title="Bauendreinigung | Royall Service & Security">
+  <Header />
+  <ServiceDetailLayout kicker={kicker} title={title} intro={intro} features={features} badge={badge} />
+  <Footer />
+</Layout>

@@ -1,0 +1,25 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import ServiceDetailLayout from "../../components/ServiceDetailLayout.astro";
+
+const kicker = "Schonende Pflege für textile Bodenbeläge";
+const title = "Teppichreinigung";
+const intro = [
+    "Teppichböden binden Staub, Gerüche und Verschmutzungen, die mit gewöhnlicher Reinigung nicht vollständig entfernt werden. Unsere professionelle Teppichreinigung sorgt für hygienisch saubere und optisch ansprechende Bodenbeläge.",
+    "Wir setzen materialschonende Verfahren ein, die sowohl hartnäckige Flecken entfernen als auch die Lebensdauer Ihrer Teppiche verlängern."
+  ];
+const features = [
+    { title: "Tiefenreinigung von Teppichböden", desc: "Entfernung von Staub, Flecken und eingetretenem Schmutz." },
+    { title: "Fleckenbehandlung", desc: "Gezielte Entfernung hartnäckiger Verunreinigungen." },
+    { title: "Materialschonende Verfahren", desc: "Angepasst an Faserart und Beanspruchung des Belags." },
+    { title: "Schnelle Trocknungszeiten", desc: "Geringe Ausfallzeiten Ihrer Räumlichkeiten." }
+  ];
+const badge = undefined;
+---
+<Layout title="Teppichreinigung | Royall Service & Security">
+  <Header />
+  <ServiceDetailLayout kicker={kicker} title={title} intro={intro} features={features} badge={badge} />
+  <Footer />
+</Layout>
