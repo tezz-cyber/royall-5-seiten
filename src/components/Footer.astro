@@ -1,20 +1,13 @@
 ---
 const year = new Date().getFullYear();
 const gebaudereinigung = [
-  { href: "/gebaudereinigung/unterhaltsreinigung", label: "Unterhaltsreinigung" },
-  { href: "/gebaudereinigung/glasreinigung", label: "Glasreinigung" },
-  { href: "/gebaudereinigung/grundreinigung", label: "Grundreinigung" },
-  { href: "/gebaudereinigung/bauendreinigung", label: "Bauendreinigung" },
+  { href: "/gebaudereinigung", label: "gebaudereinigung" }
 ];
-const gebaudeservice = [
-  { href: "/gebaudeservice/hausmeisterservice", label: "Hausmeisterservice" },
-  { href: "/gebaudeservice/schaedlingsbekaempfung", label: "Schädlingsbekämpfung" },
-  { href: "/gebaudeservice/gruenflaechenpflege", label: "Grünflächenpflege" },
-  { href: "/gebaudeservice/teppichreinigung", label: "Teppichreinigung" },
+const trockenbau = [
+  { href: "/trockenbau", label: "trockenbau" }
 ];
 const company = [
   { href: "/ueber-uns", label: "Unternehmen" },
-  { href: "/jobs", label: "Jobs" },
   { href: "/kontakt", label: "Kontakt" },
 ];
 ---
@@ -23,30 +16,24 @@ const company = [
     <div class="col-span-2">
       <h3 class="text-white font-semibold mb-4">Adresse</h3>
       <p class="mb-1">Royall Service & Security<br/>Dienstleistung GmbH</p>
-      <p class="mb-1">[Straße Hausnummer]</p>
-      <p>[PLZ] Bochum</p>
+      <p class="mb-1">Robertstr. 70L</p>
+      <p>44809 Bochum</p>
 
       <h3 class="text-white font-semibold mt-6 mb-4">Kontakt</h3>
       <p class="mb-1">
         <a href="mailto:info@royall-example.de" class="hover:text-royall-gold">info@royall-example.de</a>
       </p>
       <p>
-        <a href="tel:+4923400000000" class="hover:text-royall-gold">0234 00 00 00</a>
+        <a href="tel:+4923400000000" class="hover:text-royall-gold">0177 9193078</a>
       </p>
     </div>
 
     <div>
       <h3 class="text-white font-semibold mb-4">Gebäudereinigung</h3>
-      <ul class="space-y-2">
-        {gebaudereinigung.map((l) => (<li><a href={l.href} class="hover:text-royall-gold">{l.label}</a></li>))}
-      </ul>
     </div>
 
     <div>
-      <h3 class="text-white font-semibold mb-4">Gebäudeservice</h3>
-      <ul class="space-y-2">
-        {gebaudeservice.map((l) => (<li><a href={l.href} class="hover:text-royall-gold">{l.label}</a></li>))}
-      </ul>
+      <h3 class="text-white font-semibold mb-4">Trockenbau</h3>
     </div>
   </div>
 

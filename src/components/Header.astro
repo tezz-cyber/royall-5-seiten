@@ -1,23 +1,16 @@
 ---
 const gebaudereinigung = [
-  { href: "/gebaudereinigung/unterhaltsreinigung", label: "Unterhaltsreinigung" },
-  { href: "/gebaudereinigung/glasreinigung", label: "Glasreinigung" },
-  { href: "/gebaudereinigung/grundreinigung", label: "Grundreinigung" },
-  { href: "/gebaudereinigung/bauendreinigung", label: "Bauendreinigung" },
+  { href: "/gebaudereinigung", label: "gebaudereinigung" }
 ];
-const gebaudeservice = [
-  { href: "/gebaudeservice/hausmeisterservice", label: "Hausmeisterservice" },
-  { href: "/gebaudeservice/schaedlingsbekaempfung", label: "Schädlingsbekämpfung" },
-  { href: "/gebaudeservice/gruenflaechenpflege", label: "Grünflächenpflege" },
-  { href: "/gebaudeservice/teppichreinigung", label: "Teppichreinigung" },
+const trockenbau = [
+  { href: "/trockenbau", label: "trockenbau" }
 ];
 const menus = [
   { label: "Gebäudereinigung", overview: "/gebaudereinigung", items: gebaudereinigung },
-  { label: "Gebäudeservice", overview: "/gebaudeservice", items: gebaudeservice },
+  { label: "Trockenbau", overview: "/trockenbau", items: trockenbau },
 ];
 const main = [
   { href: "/ueber-uns", label: "Unternehmen" },
-  { href: "/jobs", label: "Jobs" },
   { href: "/kontakt", label: "Kontakt" },
 ];
 ---
@@ -29,20 +22,9 @@ const main = [
     </a>
     <nav class="hidden lg:flex items-center gap-5 text-sm font-medium">
       {menus.map((m) => (
-        <div class="relative group">
-          <a href={m.overview} class="hover:text-royall-gold transition-colors flex items-center gap-1 whitespace-nowrap">
-            {m.label}
-            <svg class="w-3 h-3" viewBox="0 0 20 20" fill="currentColor"><path d="M5 7l5 5 5-5H5z"/></svg>
-          </a>
-          <div class="absolute left-0 top-full pt-3 hidden group-hover:block">
-            <div class="bg-white text-royall-dark rounded-md shadow-lg py-2 w-60">
-              {m.items.map((s) => (
-                <a href={s.href} class="block px-4 py-2 hover:bg-royall-light text-sm">{s.label}</a>
-              ))}
-            </div>
-          </div>
-        </div>
+        <a href={m.overview} class="hover:text-royall-gold transition-colors whitespace-nowrap">{m.label}</a>
       ))}
+
       {main.map((l) => (
         <a href={l.href} class="hover:text-royall-gold transition-colors whitespace-nowrap">{l.label}</a>
       ))}
@@ -78,10 +60,10 @@ const main = [
   const iconOpen = document.getElementById("icon-open");
   const iconClose = document.getElementById("icon-close");
   toggle?.addEventListener("click", () => {
-    const isOpen = !menu.classList.contains("hidden");
-    menu.classList.toggle("hidden");
-    iconOpen.classList.toggle("hidden");
-    iconClose.classList.toggle("hidden");
+    const isOpen = !menu?.classList.contains("hidden");
+    menu?.classList.toggle("hidden");
+    iconOpen?.classList.toggle("hidden");
+    iconClose?.classList.toggle("hidden");
     toggle.setAttribute("aria-expanded", String(!isOpen));
   });
 </script>

@@ -8,7 +8,7 @@
           Sie suchen Unterstützung?<br/>Wir helfen Ihnen!
         </h2>
         <p class="text-lg font-semibold mb-1">
-          <a href="tel:+4923400000000" class="hover:text-royall-gold">0234 00 00 00</a>
+          <a href="tel:+4923400000000" class="hover:text-royall-gold">0177 9193078</a>
         </p>
         <p class="text-lg font-semibold mb-8">
           <a href="mailto:info@royall-example.de" class="hover:text-royall-gold">info@royall-example.de</a>
@@ -18,7 +18,7 @@
           <div>
             <h3 class="font-semibold text-royall-gold mb-2">Adresse</h3>
             <p>Royall Service & Security<br/>Dienstleistung GmbH</p>
-            <p class="mt-2">[Straße Hausnummer]<br/>[PLZ] Bochum</p>
+            <p class="mt-2">Robertstr. 70L<br/>44809 Bochum</p>
           </div>
           <div>
             <h3 class="font-semibold text-royall-gold mb-2">Büro Öffnungszeiten</h3>
@@ -72,8 +72,8 @@
 </section>
 
 <script>
-  const form = document.getElementById("contact-form");
-  const status = document.getElementById("form-status");
+  const form = document.getElementById("contact-form") as HTMLFormElement;
+  const status = document.getElementById("form-status") as HTMLFormElement;
   form?.addEventListener("submit", async (e) => {
     e.preventDefault();
     const fd = new FormData(form);
