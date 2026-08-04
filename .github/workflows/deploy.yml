@@ -39,9 +39,10 @@ jobs:
           host: ${{ secrets.DEPLOY_HOST }}
           username: ${{ secrets.DEPLOY_USER }}
           key: ${{ secrets.DEPLOY_SSH_KEY }}
-          port: 2222
+          port: 2200
           script: |
             cd ${{ secrets.DEPLOY_PATH }}
-            npm install --omit=dev
+            npm install
+            npm run build
             pm2 startOrReload ecosystem.config.cjs
             pm2 save
