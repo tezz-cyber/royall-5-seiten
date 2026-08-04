@@ -1,16 +1,11 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{astro,html,js,jsx,ts,tsx,vue}'],
+  content: ["./src/**/*.{astro,html,js,jsx,ts,tsx,md,mdx}"],
   theme: {
     extend: {
       colors: {
-        royall: {
-          dark: '#0f1a2b',
-          gold: '#c9a24b',
-          light: '#f5f5f3',
-        },
+        "royall-dark": "#0f172a",
+        "royall-gold": "#d4af37",
       },
     },
   },
-  plugins: [],
 };
