@@ -1,16 +1,31 @@
 ---
-export interface Props { title: string; desc: string; href: string; }
+export interface Props {
+  title: string;
+  desc: string;
+  href: string;
+}
 const { title, desc, href } = Astro.props;
 ---
-<a href={href} class="block rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg transition group">
-  <div class="h-40 bg-royall-light flex items-center justify-center text-gray-400 text-sm">
+
+<a
+  href={href}
+  class="block rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg transition group"
+>
+  <div
+    class="h-40 bg-royall-light flex items-center justify-center text-gray-400 text-sm"
+  >
     Platzhalter-Bild
   </div>
-  <div class="bg-royall-dark text-white px-5 py-4 flex items-center justify-between">
+  <div
+    class="bg-royall-dark text-white px-5 py-4 flex items-center justify-between"
+  >
     <div>
       <h3 class="font-semibold">{title}</h3>
       <p class="text-xs text-gray-300 mt-1">{desc}</p>
     </div>
-    <span class="text-royall-gold group-hover:translate-x-1 transition-transform">→</span>
+    <span
+      class="text-royall-gold group-hover:translate-x-1 transition-transform"
+      >→</span
+    >
   </div>
 </a>

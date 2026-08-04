@@ -7,19 +7,38 @@ import ServiceDetailLayout from "../../components/ServiceDetailLayout.astro";
 const kicker = "Mehr Komfort durch bessere Bauphysik";
 const title = "Dämmung & Schallschutz";
 const intro = [
-    "Ein angenehmes Raumklima und Ruhe vor Lärm steigern die Aufenthaltsqualität erheblich. Mit unseren Dämm- und Schallschutzlösungen verbessern wir Wärme-, Schall- und Brandschutz in Ihren Räumen.",
-    "Wir beraten Sie zu den passenden Materialien und Ausführungen, abgestimmt auf Ihre baulichen Anforderungen und gesetzlichen Vorgaben."
-  ];
+  "Ein angenehmes Raumklima und Ruhe vor Lärm steigern die Aufenthaltsqualität erheblich. Mit unseren Dämm- und Schallschutzlösungen verbessern wir Wärme-, Schall- und Brandschutz in Ihren Räumen.",
+  "Wir beraten Sie zu den passenden Materialien und Ausführungen, abgestimmt auf Ihre baulichen Anforderungen und gesetzlichen Vorgaben.",
+];
 const features = [
-    { title: "Wärmedämmung", desc: "Reduzierte Energiekosten durch bessere Isolierung." },
-    { title: "Schallschutzlösungen", desc: "Weniger Geräuschübertragung zwischen Räumen und Etagen." },
-    { title: "Brandschutzdämmung", desc: "Erhöhte Sicherheit nach aktuellen Brandschutznormen." },
-    { title: "Beratung zu Materialwahl", desc: "Passende Lösung für jede bauliche Situation." }
-  ];
+  {
+    title: "Wärmedämmung",
+    desc: "Reduzierte Energiekosten durch bessere Isolierung.",
+  },
+  {
+    title: "Schallschutzlösungen",
+    desc: "Weniger Geräuschübertragung zwischen Räumen und Etagen.",
+  },
+  {
+    title: "Brandschutzdämmung",
+    desc: "Erhöhte Sicherheit nach aktuellen Brandschutznormen.",
+  },
+  {
+    title: "Beratung zu Materialwahl",
+    desc: "Passende Lösung für jede bauliche Situation.",
+  },
+];
 const badge = "Neu für Royall";
 ---
+
 <Layout title="Dämmung & Schallschutz | Royall Service & Security">
   <Header />
-  <ServiceDetailLayout kicker={kicker} title={title} intro={intro} features={features} badge={badge} />
+  <ServiceDetailLayout
+    kicker={kicker}
+    title={title}
+    intro={intro}
+    features={features}
+    badge={badge}
+  />
   <Footer />
 </Layout>

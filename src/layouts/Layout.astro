@@ -4,8 +4,12 @@ export interface Props {
   title: string;
   description?: string;
 }
-const { title, description = "Royall Service & Security Dienstleistung GmbH aus Bochum." } = Astro.props;
+const {
+  title,
+  description = "Royall Service & Security Dienstleistung GmbH aus Bochum.",
+} = Astro.props;
 ---
+
 <!doctype html>
 <html lang="de">
   <head>

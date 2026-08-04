@@ -7,19 +7,38 @@ import ServiceDetailLayout from "../../components/ServiceDetailLayout.astro";
 const kicker = "Perfekte Oberflächen für jeden Anspruch";
 const title = "Spachtelarbeiten (Q1-Q4)";
 const intro = [
-    "Die Qualität einer Wand- oder Deckenoberfläche entscheidet maßgeblich über das spätere Erscheinungsbild. Unsere Spachtelarbeiten reichen von der Grundverspachtelung bis zur vollflächig geglätteten Präzisionsoberfläche.",
-    "Je nach gewünschter Oberflächenqualität (Q1 bis Q4) passen wir unsere Ausführung an Ihre Ansprüche an, etwa für streiflichtempfindliche oder glänzende Oberflächen."
-  ];
+  "Die Qualität einer Wand- oder Deckenoberfläche entscheidet maßgeblich über das spätere Erscheinungsbild. Unsere Spachtelarbeiten reichen von der Grundverspachtelung bis zur vollflächig geglätteten Präzisionsoberfläche.",
+  "Je nach gewünschter Oberflächenqualität (Q1 bis Q4) passen wir unsere Ausführung an Ihre Ansprüche an, etwa für streiflichtempfindliche oder glänzende Oberflächen.",
+];
 const features = [
-    { title: "Grundverspachtelung (Q1)", desc: "Für nachfolgende Flächen wie Fliesen oder Paneele." },
-    { title: "Standardverspachtelung (Q2)", desc: "Geeignet für übliche Anstriche und Tapeten." },
-    { title: "Feinspachtelung (Q3)", desc: "Erhöhte Ebenheit für höhere optische Ansprüche." },
-    { title: "Vollflächige Glättung (Q4)", desc: "Höchste Oberflächenqualität für anspruchsvolle Anstriche." }
-  ];
+  {
+    title: "Grundverspachtelung (Q1)",
+    desc: "Für nachfolgende Flächen wie Fliesen oder Paneele.",
+  },
+  {
+    title: "Standardverspachtelung (Q2)",
+    desc: "Geeignet für übliche Anstriche und Tapeten.",
+  },
+  {
+    title: "Feinspachtelung (Q3)",
+    desc: "Erhöhte Ebenheit für höhere optische Ansprüche.",
+  },
+  {
+    title: "Vollflächige Glättung (Q4)",
+    desc: "Höchste Oberflächenqualität für anspruchsvolle Anstriche.",
+  },
+];
 const badge = "Neu für Royall";
 ---
+
 <Layout title="Spachtelarbeiten (Q1-Q4) | Royall Service & Security">
   <Header />
-  <ServiceDetailLayout kicker={kicker} title={title} intro={intro} features={features} badge={badge} />
+  <ServiceDetailLayout
+    kicker={kicker}
+    title={title}
+    intro={intro}
+    features={features}
+    badge={badge}
+  />
   <Footer />
 </Layout>

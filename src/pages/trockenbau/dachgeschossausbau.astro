@@ -7,19 +7,38 @@ import ServiceDetailLayout from "../../components/ServiceDetailLayout.astro";
 const kicker = "Neuer Wohn- und Nutzraum unter dem Dach";
 const title = "Dachgeschossausbau";
 const intro = [
-    "Ungenutzte Dachflächen bieten oft wertvolles Flächenpotenzial. Mit unserem Dachgeschossausbau verwandeln wir Ihr Dachgeschoss in hochwertigen Wohn- oder Nutzraum, inklusive Dämmung und Innenausbau.",
-    "Wir begleiten das Projekt von der Beratung bis zur fertigen Übergabe und achten dabei auf energetische und bauliche Anforderungen."
-  ];
+  "Ungenutzte Dachflächen bieten oft wertvolles Flächenpotenzial. Mit unserem Dachgeschossausbau verwandeln wir Ihr Dachgeschoss in hochwertigen Wohn- oder Nutzraum, inklusive Dämmung und Innenausbau.",
+  "Wir begleiten das Projekt von der Beratung bis zur fertigen Übergabe und achten dabei auf energetische und bauliche Anforderungen.",
+];
 const features = [
-    { title: "Dämmung und Dampfsperre", desc: "Energieeffiziente Ausführung nach aktuellen Standards." },
-    { title: "Wand- und Deckenverkleidung", desc: "Fachgerechter Innenausbau für Wohnqualität." },
-    { title: "Elektro- und Lichtvorbereitung", desc: "Abstimmung mit weiteren Gewerken vor Fertigstellung." },
-    { title: "Individuelle Raumaufteilung", desc: "Planung nach Ihren Wünschen und baulichen Gegebenheiten." }
-  ];
+  {
+    title: "Dämmung und Dampfsperre",
+    desc: "Energieeffiziente Ausführung nach aktuellen Standards.",
+  },
+  {
+    title: "Wand- und Deckenverkleidung",
+    desc: "Fachgerechter Innenausbau für Wohnqualität.",
+  },
+  {
+    title: "Elektro- und Lichtvorbereitung",
+    desc: "Abstimmung mit weiteren Gewerken vor Fertigstellung.",
+  },
+  {
+    title: "Individuelle Raumaufteilung",
+    desc: "Planung nach Ihren Wünschen und baulichen Gegebenheiten.",
+  },
+];
 const badge = "Neu für Royall";
 ---
+
 <Layout title="Dachgeschossausbau | Royall Service & Security">
   <Header />
-  <ServiceDetailLayout kicker={kicker} title={title} intro={intro} features={features} badge={badge} />
+  <ServiceDetailLayout
+    kicker={kicker}
+    title={title}
+    intro={intro}
+    features={features}
+    badge={badge}
+  />
   <Footer />
 </Layout>

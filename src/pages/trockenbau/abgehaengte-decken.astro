@@ -7,19 +7,38 @@ import ServiceDetailLayout from "../../components/ServiceDetailLayout.astro";
 const kicker = "Moderne Deckenlösungen mit Funktion";
 const title = "Abgehängte Decken";
 const intro = [
-    "Abgehängte Decken schaffen nicht nur ein gleichmäßiges Erscheinungsbild, sondern bieten auch Platz für Beleuchtung, Lüftung und technische Installationen. Wir planen und montieren Deckensysteme passgenau für Ihr Projekt.",
-    "Ob glatte Gipskartondecke oder Deckensegel mit Akustikfunktion: Wir setzen Ihre Anforderungen fachgerecht und termingerecht um."
-  ];
+  "Abgehängte Decken schaffen nicht nur ein gleichmäßiges Erscheinungsbild, sondern bieten auch Platz für Beleuchtung, Lüftung und technische Installationen. Wir planen und montieren Deckensysteme passgenau für Ihr Projekt.",
+  "Ob glatte Gipskartondecke oder Deckensegel mit Akustikfunktion: Wir setzen Ihre Anforderungen fachgerecht und termingerecht um.",
+];
 const features = [
-    { title: "Gipskartondecken", desc: "Glatte, einheitliche Deckenflächen für jeden Raumtyp." },
-    { title: "Integration von Beleuchtung und Lüftung", desc: "Saubere Einbindung technischer Komponenten." },
-    { title: "Akustikdecken", desc: "Verbesserte Raumakustik für Büro- und Besprechungsräume." },
-    { title: "Individuelle Deckenhöhen", desc: "Anpassung an bauliche Gegebenheiten vor Ort." }
-  ];
+  {
+    title: "Gipskartondecken",
+    desc: "Glatte, einheitliche Deckenflächen für jeden Raumtyp.",
+  },
+  {
+    title: "Integration von Beleuchtung und Lüftung",
+    desc: "Saubere Einbindung technischer Komponenten.",
+  },
+  {
+    title: "Akustikdecken",
+    desc: "Verbesserte Raumakustik für Büro- und Besprechungsräume.",
+  },
+  {
+    title: "Individuelle Deckenhöhen",
+    desc: "Anpassung an bauliche Gegebenheiten vor Ort.",
+  },
+];
 const badge = "Neu für Royall";
 ---
+
 <Layout title="Abgehängte Decken | Royall Service & Security">
   <Header />
-  <ServiceDetailLayout kicker={kicker} title={title} intro={intro} features={features} badge={badge} />
+  <ServiceDetailLayout
+    kicker={kicker}
+    title={title}
+    intro={intro}
+    features={features}
+    badge={badge}
+  />
   <Footer />
 </Layout>

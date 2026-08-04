@@ -1,30 +1,35 @@
 ---
 const year = new Date().getFullYear();
 const gebaudereinigung = [
-  { href: "/gebaudereinigung", label: "gebaudereinigung" }
+  { href: "/gebaudereinigung", label: "gebaudereinigung" },
 ];
-const trockenbau = [
-  { href: "/trockenbau", label: "trockenbau" }
-];
+const trockenbau = [{ href: "/trockenbau", label: "trockenbau" }];
 const company = [
   { href: "/ueber-uns", label: "Unternehmen" },
   { href: "/kontakt", label: "Kontakt" },
 ];
 ---
+
 <footer class="bg-royall-dark text-gray-300 pt-16 pb-8">
-  <div class="max-w-5xl mx-auto px-4 md:px-6 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10 text-sm">
+  <div
+    class="max-w-5xl mx-auto px-4 md:px-6 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10 text-sm"
+  >
     <div class="col-span-2">
       <h3 class="text-white font-semibold mb-4">Adresse</h3>
-      <p class="mb-1">Royall Service & Security<br/>Dienstleistung GmbH</p>
+      <p class="mb-1">Royall Service & Security<br />Dienstleistung GmbH</p>
       <p class="mb-1">Robertstr. 70L</p>
       <p>44809 Bochum</p>
 
       <h3 class="text-white font-semibold mt-6 mb-4">Kontakt</h3>
       <p class="mb-1">
-        <a href="mailto:info@royall-example.de" class="hover:text-royall-gold">info@royall-example.de</a>
+        <a href="mailto:info@royall-example.de" class="hover:text-royall-gold"
+          >info@royall-example.de</a
+        >
       </p>
       <p>
-        <a href="tel:+4923400000000" class="hover:text-royall-gold">0177 9193078</a>
+        <a href="tel:+4923400000000" class="hover:text-royall-gold"
+          >0177 9193078</a
+        >
       </p>
     </div>
 
@@ -37,7 +42,9 @@ const company = [
     </div>
   </div>
 
-  <div class="max-w-5xl mx-auto px-4 md:px-6 mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10 text-sm">
+  <div
+    class="max-w-5xl mx-auto px-4 md:px-6 mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10 text-sm"
+  >
     <div class="col-span-2">
       <h3 class="text-white font-semibold mb-4">Büro Öffnungszeiten</h3>
       <p>Mo–Do: 8:00 bis 16:30 Uhr</p>
@@ -46,12 +53,22 @@ const company = [
     <div>
       <h3 class="text-white font-semibold mb-4">Royall</h3>
       <ul class="space-y-2">
-        {company.map((l) => (<li><a href={l.href} class="hover:text-royall-gold">{l.label}</a></li>))}
+        {
+          company.map((l) => (
+            <li>
+              <a href={l.href} class="hover:text-royall-gold">
+                {l.label}
+              </a>
+            </li>
+          ))
+        }
       </ul>
     </div>
   </div>
 
-  <div class="max-w-5xl mx-auto px-4 md:px-6 mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between gap-4 text-xs text-gray-400">
+  <div
+    class="max-w-5xl mx-auto px-4 md:px-6 mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between gap-4 text-xs text-gray-400"
+  >
     <p>© {year} Royall Service & Security Dienstleistung GmbH</p>
     <div class="flex gap-6">
       <a href="/impressum" class="hover:text-white">Impressum</a>

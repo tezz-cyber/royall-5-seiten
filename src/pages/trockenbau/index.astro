@@ -8,14 +8,21 @@ const items = [
   { title: "Abgehängte Decken", href: "/trockenbau/abgehaengte-decken" },
   { title: "Dachgeschossausbau", href: "/trockenbau/dachgeschossausbau" },
   { title: "Vorsatzschalen", href: "/trockenbau/vorsatzschalen" },
-  { title: "Dämmung & Schallschutz", href: "/trockenbau/daemmung-schallschutz" },
-  { title: "Spachtelarbeiten", href: "/trockenbau/spachtelarbeiten" }
+  {
+    title: "Dämmung & Schallschutz",
+    href: "/trockenbau/daemmung-schallschutz",
+  },
+  { title: "Spachtelarbeiten", href: "/trockenbau/spachtelarbeiten" },
 ];
 ---
+
 <Layout title="Trockenbau | Royall Service & Security">
   <Header />
   <section class="max-w-6xl mx-auto px-4 md:px-6 py-16 md:py-20">
-    <span class="inline-block bg-royall-gold text-royall-dark text-xs font-semibold px-3 py-1 rounded-full mb-4">Neu für Royall</span>
+    <span
+      class="inline-block bg-royall-gold text-royall-dark text-xs font-semibold px-3 py-1 rounded-full mb-4"
+      >Neu für Royall</span
+    >
     <h1 class="text-3xl font-bold mb-10">Trockenbau</h1>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
       {items.map((s) => <ServiceTile title={s.title} href={s.href} />)}

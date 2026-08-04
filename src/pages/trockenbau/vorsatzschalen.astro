@@ -7,19 +7,38 @@ import ServiceDetailLayout from "../../components/ServiceDetailLayout.astro";
 const kicker = "Saubere Lösungen für Leitungen und Installationen";
 const title = "Vorsatzschalen";
 const intro = [
-    "Sichtbare Leitungen und Installationen wirken unschön und erschweren die Reinigung. Mit Vorsatzschalen verkleiden wir Rohre, Kabel und technische Einbauten sauber und fachgerecht.",
-    "Besonders im Sanitärbereich und bei Altbausanierungen sorgen Vorsatzschalen für ein aufgeräumtes Erscheinungsbild und erleichtern spätere Wartungsarbeiten."
-  ];
+  "Sichtbare Leitungen und Installationen wirken unschön und erschweren die Reinigung. Mit Vorsatzschalen verkleiden wir Rohre, Kabel und technische Einbauten sauber und fachgerecht.",
+  "Besonders im Sanitärbereich und bei Altbausanierungen sorgen Vorsatzschalen für ein aufgeräumtes Erscheinungsbild und erleichtern spätere Wartungsarbeiten.",
+];
 const features = [
-    { title: "Verkleidung von Sanitärinstallationen", desc: "Saubere Optik in Bad- und Küchenbereichen." },
-    { title: "Kabel- und Leitungsverkleidung", desc: "Unauffällige Integration technischer Leitungen." },
-    { title: "Zugängliche Revisionsöffnungen", desc: "Wartungsfreundliche Ausführung auf Wunsch." },
-    { title: "Passgenaue Umsetzung", desc: "Individuell abgestimmt auf die baulichen Gegebenheiten." }
-  ];
+  {
+    title: "Verkleidung von Sanitärinstallationen",
+    desc: "Saubere Optik in Bad- und Küchenbereichen.",
+  },
+  {
+    title: "Kabel- und Leitungsverkleidung",
+    desc: "Unauffällige Integration technischer Leitungen.",
+  },
+  {
+    title: "Zugängliche Revisionsöffnungen",
+    desc: "Wartungsfreundliche Ausführung auf Wunsch.",
+  },
+  {
+    title: "Passgenaue Umsetzung",
+    desc: "Individuell abgestimmt auf die baulichen Gegebenheiten.",
+  },
+];
 const badge = "Neu für Royall";
 ---
+
 <Layout title="Vorsatzschalen | Royall Service & Security">
   <Header />
-  <ServiceDetailLayout kicker={kicker} title={title} intro={intro} features={features} badge={badge} />
+  <ServiceDetailLayout
+    kicker={kicker}
+    title={title}
+    intro={intro}
+    features={features}
+    badge={badge}
+  />
   <Footer />
 </Layout>

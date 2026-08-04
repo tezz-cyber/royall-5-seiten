@@ -7,19 +7,38 @@ import ServiceDetailLayout from "../../components/ServiceDetailLayout.astro";
 const kicker = "Für die regelmäßige Reinigung Ihres Unternehmens";
 const title = "Unterhaltsreinigung";
 const intro = [
-    "Sauberkeit schafft Vertrauen. Besonders in Arbeitsumgebungen, die täglich genutzt werden. Mit unserer professionellen Unterhaltsreinigung sorgen wir dafür, dass Ihre Räume stets gepflegt, hygienisch und einladend bleiben. Ob Bürogebäude, Arztpraxis, Schule oder Industriehalle: Wir passen die Unterhaltsreinigung individuell an Ihre Bedürfnisse und Nutzungsfrequenzen an. Zuverlässig, gründlich und termingerecht.",
-    "Unser erfahrenes Team arbeitet nach strukturierten Reinigungsplänen und mit modernen, umweltschonenden Verfahren. Dabei achten wir bei der Unterhaltsreinigung nicht nur auf sichtbare Sauberkeit, sondern auch auf die Werterhaltung Ihrer Einrichtung und Böden."
-  ];
+  "Sauberkeit schafft Vertrauen. Besonders in Arbeitsumgebungen, die täglich genutzt werden. Mit unserer professionellen Unterhaltsreinigung sorgen wir dafür, dass Ihre Räume stets gepflegt, hygienisch und einladend bleiben. Ob Bürogebäude, Arztpraxis, Schule oder Industriehalle: Wir passen die Unterhaltsreinigung individuell an Ihre Bedürfnisse und Nutzungsfrequenzen an. Zuverlässig, gründlich und termingerecht.",
+  "Unser erfahrenes Team arbeitet nach strukturierten Reinigungsplänen und mit modernen, umweltschonenden Verfahren. Dabei achten wir bei der Unterhaltsreinigung nicht nur auf sichtbare Sauberkeit, sondern auch auf die Werterhaltung Ihrer Einrichtung und Böden.",
+];
 const features = [
-    { title: "Regelmäßige Reinigung von Büro- und Geschäftsräumen", desc: "Reinigung von Böden, Oberflächen, Sanitärbereichen und Küchen. Abgestimmt auf Ihre Nutzungszeiten." },
-    { title: "Fester Ansprechpartner für Ihr Objekt", desc: "Persönliche Betreuung, schnelle Reaktion auf Anliegen und enge Abstimmung mit Ihrer Verwaltung." },
-    { title: "Dokumentierte Qualitätskontrollen", desc: "Mit digitalen Prüfsystemen stellen wir sicher, dass unsere Leistungen konstant hochwertig bleiben." },
-    { title: "Flexible Reinigungszeiten ohne Betriebsstörung", desc: "Wir reinigen nach Ihrem Bedarf und angepasst an Ihre Abläufe." }
-  ];
+  {
+    title: "Regelmäßige Reinigung von Büro- und Geschäftsräumen",
+    desc: "Reinigung von Böden, Oberflächen, Sanitärbereichen und Küchen. Abgestimmt auf Ihre Nutzungszeiten.",
+  },
+  {
+    title: "Fester Ansprechpartner für Ihr Objekt",
+    desc: "Persönliche Betreuung, schnelle Reaktion auf Anliegen und enge Abstimmung mit Ihrer Verwaltung.",
+  },
+  {
+    title: "Dokumentierte Qualitätskontrollen",
+    desc: "Mit digitalen Prüfsystemen stellen wir sicher, dass unsere Leistungen konstant hochwertig bleiben.",
+  },
+  {
+    title: "Flexible Reinigungszeiten ohne Betriebsstörung",
+    desc: "Wir reinigen nach Ihrem Bedarf und angepasst an Ihre Abläufe.",
+  },
+];
 const badge = undefined;
 ---
+
 <Layout title="Unterhaltsreinigung | Royall Service & Security">
   <Header />
-  <ServiceDetailLayout kicker={kicker} title={title} intro={intro} features={features} badge={badge} />
+  <ServiceDetailLayout
+    kicker={kicker}
+    title={title}
+    intro={intro}
+    features={features}
+    badge={badge}
+  />
   <Footer />
 </Layout>

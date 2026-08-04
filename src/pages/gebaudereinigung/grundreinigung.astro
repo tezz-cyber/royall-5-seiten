@@ -7,19 +7,38 @@ import ServiceDetailLayout from "../../components/ServiceDetailLayout.astro";
 const kicker = "Intensive Tiefenreinigung für Ihre Räume";
 const title = "Grundreinigung";
 const intro = [
-    "Manchmal reicht die regelmäßige Unterhaltsreinigung nicht aus. Bei stark beanspruchten Flächen, hartnäckigem Schmutz oder anstehenden Übergaben sorgt unsere Grundreinigung für eine gründliche Tiefenreinigung Ihrer Räumlichkeiten.",
-    "Ob Bodenbeläge, Sanitäranlagen oder Gemeinschaftsflächen: Wir bringen alles wieder in einen einwandfreien Ausgangszustand und legen damit die Basis für eine langfristig einfache Pflege."
-  ];
+  "Manchmal reicht die regelmäßige Unterhaltsreinigung nicht aus. Bei stark beanspruchten Flächen, hartnäckigem Schmutz oder anstehenden Übergaben sorgt unsere Grundreinigung für eine gründliche Tiefenreinigung Ihrer Räumlichkeiten.",
+  "Ob Bodenbeläge, Sanitäranlagen oder Gemeinschaftsflächen: Wir bringen alles wieder in einen einwandfreien Ausgangszustand und legen damit die Basis für eine langfristig einfache Pflege.",
+];
 const features = [
-    { title: "Tiefenreinigung von Böden und Oberflächen", desc: "Beseitigung hartnäckiger Verschmutzungen und Ablagerungen." },
-    { title: "Grundreinigung bei Mieterwechsel", desc: "Übergabefertige Reinigung für Wohn- und Gewerbeobjekte." },
-    { title: "Sanitär- und Nassbereiche", desc: "Gründliche Hygienereinigung inklusive Entkalkung." },
-    { title: "Vorbereitung für Beschichtung/Versiegelung", desc: "Saubere Basis für nachfolgende Bodenpflegearbeiten." }
-  ];
+  {
+    title: "Tiefenreinigung von Böden und Oberflächen",
+    desc: "Beseitigung hartnäckiger Verschmutzungen und Ablagerungen.",
+  },
+  {
+    title: "Grundreinigung bei Mieterwechsel",
+    desc: "Übergabefertige Reinigung für Wohn- und Gewerbeobjekte.",
+  },
+  {
+    title: "Sanitär- und Nassbereiche",
+    desc: "Gründliche Hygienereinigung inklusive Entkalkung.",
+  },
+  {
+    title: "Vorbereitung für Beschichtung/Versiegelung",
+    desc: "Saubere Basis für nachfolgende Bodenpflegearbeiten.",
+  },
+];
 const badge = undefined;
 ---
+
 <Layout title="Grundreinigung | Royall Service & Security">
   <Header />
-  <ServiceDetailLayout kicker={kicker} title={title} intro={intro} features={features} badge={badge} />
+  <ServiceDetailLayout
+    kicker={kicker}
+    title={title}
+    intro={intro}
+    features={features}
+    badge={badge}
+  />
   <Footer />
 </Layout>
