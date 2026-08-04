@@ -1,15 +1,17 @@
 ---
-import { Image } from 'astro:assets';
-import logo from '../assets/royall-service-security-logo.svg';
+import { Image } from "astro:assets";
+import logo from "../assets/royall-service-security-logo.svg";
 
 const gebaudereinigung = [
-  { href: "/gebaudereinigung", label: "gebaudereinigung" }
+  { href: "/gebaudereinigung", label: "gebaudereinigung" },
 ];
-const trockenbau = [
-  { href: "/trockenbau", label: "trockenbau" }
-];
+const trockenbau = [{ href: "/trockenbau", label: "trockenbau" }];
 const menus = [
-  { label: "Gebäudereinigung", overview: "/gebaudereinigung", items: gebaudereinigung },
+  {
+    label: "Gebäudereinigung",
+    overview: "/gebaudereinigung",
+    items: gebaudereinigung,
+  },
   { label: "Trockenbau", overview: "/trockenbau", items: trockenbau },
 ];
 const main = [
@@ -17,41 +19,98 @@ const main = [
   { href: "/kontakt", label: "Kontakt" },
 ];
 ---
-<header class="sticky top-0 z-50 bg-royall-dark text-white shadow-md">
-  <div class="max-w-6xl mx-auto flex items-center justify-between px-4 md:px-6 py-3 gap-4">
-    <a href="/" class="flex items-center gap-2 shrink-0">
-  <Image src={logo} alt="Royall Service & Security" class="h-16 w-auto md:h-20" />
-</a>
-    <nav class="hidden lg:flex items-center gap-5 text-sm font-medium">
-      {menus.map((m) => (
-        <a href={m.overview} class="hover:text-royall-gold transition-colors whitespace-nowrap">{m.label}</a>
-      ))}
 
-      {main.map((l) => (
-        <a href={l.href} class="hover:text-royall-gold transition-colors whitespace-nowrap">{l.label}</a>
-      ))}
+<header class="sticky top-0 z-50 bg-royall-dark text-white shadow-md">
+  <div
+    class="max-w-6xl mx-auto flex items-center justify-between px-4 md:px-6 py-3 gap-4"
+  >
+    <a href="/" class="flex items-center gap-2 shrink-0">
+      <img
+        src="/src/assets/royall-service-security-logo.svg"
+        alt="Royall Service & Security"
+        class="h-18 w-auto md:h-18"
+      />
+    </a>
+    <nav class="hidden lg:flex items-center gap-5 text-sm font-medium">
+      {
+        menus.map((m) => (
+          <a
+            href={m.overview}
+            class="hover:text-royall-gold transition-colors whitespace-nowrap"
+          >
+            {m.label}
+          </a>
+        ))
+      }
+
+      {
+        main.map((l) => (
+          <a
+            href={l.href}
+            class="hover:text-royall-gold transition-colors whitespace-nowrap"
+          >
+            {l.label}
+          </a>
+        ))
+      }
     </nav>
-    <button id="menu-toggle" class="lg:hidden text-white" aria-label="Menü öffnen" aria-expanded="false">
-      <svg id="icon-open" class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-      <svg id="icon-close" class="w-7 h-7 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    <button
+      id="menu-toggle"
+      class="lg:hidden text-white"
+      aria-label="Menü öffnen"
+      aria-expanded="false"
+    >
+      <svg
+        id="icon-open"
+        class="w-7 h-7"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"></path></svg
+      >
+      <svg
+        id="icon-close"
+        class="w-7 h-7 hidden"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"><path d="M6 6l12 12M18 6L6 18"></path></svg
+      >
     </button>
   </div>
 
-  <div id="mobile-menu" class="hidden lg:hidden bg-royall-dark border-t border-white/10 max-h-[80vh] overflow-y-auto">
+  <div
+    id="mobile-menu"
+    class="hidden lg:hidden bg-royall-dark border-t border-white/10 max-h-[80vh] overflow-y-auto"
+  >
     <div class="px-4 py-4 flex flex-col gap-2 text-sm">
-      {menus.map((m) => (
-        <details class="border-b border-white/10 pb-2">
-          <summary class="py-2 cursor-pointer font-medium">{m.label}</summary>
-          <div class="pl-4 flex flex-col gap-1 pb-2">
-            {m.items.map((s) => (
-              <a href={s.href} class="py-1 text-gray-300 hover:text-royall-gold">{s.label}</a>
-            ))}
-          </div>
-        </details>
-      ))}
-      {main.map((l) => (
-        <a href={l.href} class="py-2 border-b border-white/10 hover:text-royall-gold">{l.label}</a>
-      ))}
+      {
+        menus.map((m) => (
+          <details class="border-b border-white/10 pb-2">
+            <summary class="py-2 cursor-pointer font-medium">{m.label}</summary>
+            <div class="pl-4 flex flex-col gap-1 pb-2">
+              {m.items.map((s) => (
+                <a
+                  href={s.href}
+                  class="py-1 text-gray-300 hover:text-royall-gold"
+                >
+                  {s.label}
+                </a>
+              ))}
+            </div>
+          </details>
+        ))
+      }
+      {
+        main.map((l) => (
+          <a
+            href={l.href}
+            class="py-2 border-b border-white/10 hover:text-royall-gold"
+          >
+            {l.label}
+          </a>
+        ))
+      }
     </div>
   </div>
 </header>
