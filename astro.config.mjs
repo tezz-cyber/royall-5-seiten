@@ -5,9 +5,11 @@ import node from "@astrojs/node";
 export default defineConfig({
   output: "server",
   adapter: node({ mode: "standalone" }),
-  security: {
-    checkOrigin: false,
-  },
+  checkOrigin: true,
+  allowedDomains: [
+    { hostname: "5.royall-ssd.de" },
+    { hostname: "www.5.royall-ssd.de" },
+  ],
   vite: {
     plugins: [tailwindcss()],
   },
