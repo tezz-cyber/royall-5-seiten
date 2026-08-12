@@ -6,12 +6,100 @@ import Footer from "../components/Footer.astro";
 
 <Layout title="Impressum | Royall Service & Security">
   <Header />
-  <section class="max-w-3xl mx-auto px-6 py-20">
-    <h1 class="text-3xl font-bold mb-6">Impressum</h1>
-    <p class="text-gray-700">
-      Inhalte werden gemeinsam mit dem Mandanten ergänzt (Pflichtangaben gem. §
-      5 TMG / DSGVO).
-    </p>
+  <section class="max-w-3xl mx-auto px-6 py-16 md:py-20">
+    <h1 class="text-3xl md:text-4xl font-bold mb-8 text-royall-dark">Impressum</h1>
+
+    <div class="space-y-8 text-gray-700 leading-relaxed">
+      <!-- Diensteanbieter -->
+      <div>
+        <h2 class="text-xl font-semibold text-royall-dark mb-2">Angaben gemäß § 5 DDG</h2>
+        <p>
+          <strong>Royall Service & Security Dienstleistung GmbH</strong><br />
+          [Musterstraße 12]<br />
+          [44787] Bochum<br />
+          Deutschland
+        </p>
+      </div>
+
+      <!-- Vertretungsberechtigte -->
+      <div>
+        <h2 class="text-xl font-semibold text-royall-dark mb-2">Vertreten durch</h2>
+        <p>
+          Geschäftsführer: [Vorname Nachname]
+        </p>
+      </div>
+
+      <!-- Kontakt -->
+      <div>
+        <h2 class="text-xl font-semibold text-royall-dark mb-2">Kontakt</h2>
+        <p>
+          Telefon: [0234 / 123 456 78]<br />
+          E-Mail: [info@royall-dienstleistung.de]<br />
+          Website: www.royall-dienstleistung.de
+        </p>
+      </div>
+
+      <!-- Registereintrag -->
+      <div>
+        <h2 class="text-xl font-semibold text-royall-dark mb-2">Registereintrag</h2>
+        <p>
+          Eintragung im Handelsregister.<br />
+          Registergericht: Amtsgericht Bochum<br />
+          Registernummer: HRB [12345]
+        </p>
+      </div>
+
+      <!-- Umsatzsteuer-ID -->
+      <div>
+        <h2 class="text-xl font-semibold text-royall-dark mb-2">Umsatzsteuer-ID</h2>
+        <p>
+          Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
+          DE [123456789]
+        </p>
+      </div>
+
+      <!-- Berufsrechtliche Angaben / Aufsichtsbehörde (optional für Bewachungsgewerbe) -->
+      <div>
+        <h2 class="text-xl font-semibold text-royall-dark mb-2">Aufsichtsbehörde & Erlaubnis</h2>
+        <p class="text-sm text-gray-600">
+          (Falls Erlaubnis nach § 34a GewO für Security-Dienstleistungen vorliegt):<br />
+          Zuständige Erlaubnisbehörde: [Stadt Bochum – Ordungsamt / Gewerbeamt]<br />
+          [Adresse der Behörde]
+        </p>
+      </div>
+
+      <!-- Streitschlichtung -->
+      <div>
+        <h2 class="text-xl font-semibold text-royall-dark mb-2">EU-Streitschlichtung & Verbraucherstreitbeilegung</h2>
+        <p class="mb-2">
+          Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
+          <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer" class="text-royall-gold underline hover:opacity-80">
+            https://ec.europa.eu/consumers/odr/
+          </a>.
+        </p>
+        <p>
+          Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+        </p>
+      </div>
+
+      <!-- Haftungsausschluss -->
+      <div class="border-t border-gray-200 pt-6 space-y-4 text-sm text-gray-600">
+        <h3 class="text-base font-semibold text-royall-dark">Haftung für Inhalte</h3>
+        <p>
+          Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
+        </p>
+
+        <h3 class="text-base font-semibold text-royall-dark">Haftung für Links</h3>
+        <p>
+          Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.
+        </p>
+
+        <h3 class="text-base font-semibold text-royall-dark">Urheberrecht</h3>
+        <p>
+          Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
+        </p>
+      </div>
+    </div>
   </section>
   <Footer />
 </Layout>

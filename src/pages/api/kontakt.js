@@ -2,7 +2,7 @@ import nodemailer from "nodemailer";
 
 export const prerender = false;
 
-export async function POST({ request }) {
+export async function POST({ request, url }) {
   console.error(
     "DEBUG Origin:",
     request.headers.get("origin"),
