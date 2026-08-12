@@ -14,7 +14,9 @@ export async function POST({ request }) {
     const datenschutz = data.get("datenschutz") === "on";
 
     if (!name || !email || !telefon || !datenschutz) {
-      return new Response(JSON.stringify({ error: "Pflichtfelder fehlen." }), { status: 400 });
+      return new Response(JSON.stringify({ error: "Pflichtfelder fehlen." }), {
+        status: 400,
+      });
     }
 
     const transporter = nodemailer.createTransport({
@@ -29,7 +31,7 @@ export async function POST({ request }) {
 
     await transporter.sendMail({
       from: `"Royall Kontaktformular" <${import.meta.env.SMTP_USER}>`,
-      to: import.meta.env.CONTACT_RECEIVER,
+      to: import.meta.env.SMTP_TO,
       replyTo: email,
       subject: `Neue Anfrage von ${name}${unternehmen ? " (" + unternehmen + ")" : ""}`,
       text: `Unternehmen: ${unternehmen}
@@ -44,6 +46,9 @@ ${nachricht}`,
 
     return new Response(JSON.stringify({ success: true }), { status: 200 });
   } catch (err) {
-    return new Response(JSON.stringify({ error: "Fehler beim Senden." }), { status: 500 });
+    console.error("Mail-Fehler:", err);
+    return new Response(JSON.stringify({ error: "Fehler beim Senden." }), {
+      status: 500,
+    });
   }
 }
