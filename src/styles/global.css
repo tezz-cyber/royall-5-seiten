@@ -1,2 +1,8 @@
 @import "tailwindcss";
 @config "../../tailwind.config.cjs";
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+

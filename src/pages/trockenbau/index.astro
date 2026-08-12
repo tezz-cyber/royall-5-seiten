@@ -1,32 +1,64 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
-import ServiceTile from "../../components/ServiceTile.astro";
 import Footer from "../../components/Footer.astro";
+
 const items = [
-  { title: "Trennwände", href: "/trockenbau/trennwaende" },
-  { title: "Abgehängte Decken", href: "/trockenbau/abgehaengte-decken" },
-  { title: "Dachgeschossausbau", href: "/trockenbau/dachgeschossausbau" },
-  { title: "Vorsatzschalen", href: "/trockenbau/vorsatzschalen" },
-  {
-    title: "Dämmung & Schallschutz",
-    href: "/trockenbau/daemmung-schallschutz",
-  },
-  { title: "Spachtelarbeiten", href: "/trockenbau/spachtelarbeiten" },
+  { title: "Trennwände", desc: "Flexible Raumtrennung für Büros, Praxen und Gewerbeflächen.", img: "/bilder/trennwaende.jpg", href: "/trockenbau/trennwaende" },
+  { title: "Abgehängte Decken", desc: "Für Akustik, Optik und Kabelführung optimierte Deckensysteme.", img: "/bilder/abgehaengte-decken.jpg", href: "/trockenbau/abgehaengte-decken" },
+  { title: "Dämmung & Schallschutz", desc: "Effektive Isolierung für mehr Komfort und Energieeffizienz.", img: "/bilder/daemmung-schallschutz.jpg", href: "/trockenbau/daemmung-schallschutz" },
+  { title: "Spachtelarbeiten", desc: "Saubere, ebene Oberflächen als Basis für jede Wandgestaltung.", img: "/bilder/spachtelarbeiten.jpg", href: "/trockenbau/spachtelarbeiten" },
 ];
 ---
-
 <Layout title="Trockenbau | Royall Service & Security">
   <Header />
-  <section class="max-w-6xl mx-auto px-4 md:px-6 py-16 md:py-20">
-    <span
-      class="inline-block bg-royall-gold text-royall-dark text-xs font-semibold px-3 py-1 rounded-full mb-4"
-      >Neu für Royall</span
-    >
-    <h1 class="text-3xl font-bold mb-10">Trockenbau</h1>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-      {items.map((s) => <ServiceTile title={s.title} href={s.href} />)}
+
+  <section class="relative bg-royall-dark text-white">
+    <div class="max-w-5xl mx-auto px-4 md:px-6 py-16 md:py-20">
+      <p class="text-royall-gold font-semibold mb-2">Leistungen von Royall im Bau-Bereich</p>
+      <h1 class="text-3xl md:text-4xl font-bold mb-6">Trockenbau</h1>
+      <p class="text-gray-300 max-w-2xl leading-relaxed">
+        Von der Trennwand bis zum Dachgeschossausbau: Wir setzen Ihre Trockenbauprojekte präzise,
+        termingerecht und in gewohnt hoher Qualität um. Ob Neubau, Sanierung oder Umbau – wir passen
+        uns Ihren Anforderungen an.
+      </p>
+    </div>
+    <div class="relative left-1/2 -translate-x-1/2 w-screen">
+      <img
+        src="/bilder/trockenbau-hero.jpg"
+        alt="Team beim Trockenbau"
+        class="h-48 md:h-64 w-full object-cover"
+      />
     </div>
   </section>
+
+  <section class="max-w-5xl mx-auto px-4 md:px-6 py-14 md:py-16">
+    <p class="text-gray-700 leading-relaxed mb-10">
+      Unser erfahrenes Team arbeitet mit modernen Materialien und bewährten Techniken. So entstehen
+      belastbare, saubere Lösungen, die höchsten Ansprüchen an Optik und Funktion gerecht werden.
+    </p>
+
+    <h2 class="text-xl md:text-2xl font-bold mb-6">Unsere Leistungen im Trockenbau:</h2>
+    <div class="grid sm:grid-cols-2 gap-6 mb-10">
+      {items.map((i) => (
+        <a href={i.href} class="block rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg transition group">
+          <img
+            src={i.img}
+            alt={i.title}
+            class="h-36 w-full object-cover"
+          />
+          <div class="p-5">
+            <h3 class="font-semibold mb-1">{i.title}</h3>
+            <p class="text-sm text-gray-600">{i.desc}</p>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <a href="/kontakt" class="inline-block bg-royall-gold text-royall-dark font-semibold px-6 py-3 rounded-md hover:opacity-90 transition">
+      Angebot anfordern
+    </a>
+  </section>
+
   <Footer />
 </Layout>
