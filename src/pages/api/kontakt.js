@@ -3,6 +3,14 @@ import nodemailer from "nodemailer";
 export const prerender = false;
 
 export async function POST({ request }) {
+  console.error(
+    "DEBUG Origin:",
+    request.headers.get("origin"),
+    "| url.origin:",
+    url.origin,
+    "| Host-Header:",
+    request.headers.get("host"),
+  );
   try {
     const data = await request.formData();
     const unternehmen = data.get("unternehmen")?.toString() || "";
